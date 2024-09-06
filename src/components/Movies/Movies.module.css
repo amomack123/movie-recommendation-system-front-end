@@ -1,0 +1,25 @@
+/* Movies Page Styles */
+.movies-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.movie-item {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie-item-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}

@@ -1,0 +1,30 @@
+/* Review Form Styles */
+.review-form-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .review-input {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .review-submit-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .review-error {
+    color: red;
+    font-size: 14px;
+  }
+  

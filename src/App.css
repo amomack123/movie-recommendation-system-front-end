@@ -1,42 +1,195 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* App.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+/* Navbar Styles */
+.NavBar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.NavBar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.NavBar a:hover {
+  text-decoration: underline;
+}
+
+.NavBar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Main Container */
+.main-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Dashboard Styles */
+.Dashboard {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.Dashboard h1 {
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Movies Page Styles */
+.Movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.MovieCard {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(25% - 20px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card {
-  padding: 2em;
+.MovieCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.read-the-docs {
-  color: #888;
+.MovieCard img {
+  width: 100%;
+  height: auto;
+}
+
+.MovieCard .movie-info {
+  padding: 15px;
+}
+
+.MovieCard .movie-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.MovieCard .movie-description {
+  color: #555;
+}
+
+/* Movie Details Page Styles */
+.MovieDetails {
+  display: flex;
+  gap: 20px;
+}
+
+.MovieDetails img {
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.MovieDetails .info {
+  max-width: 800px;
+}
+
+/* Forms Styles */
+.form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.form-container h2 {
+margin-bottom: 20px;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+
+.form-container button {
+background-color: #333;
+color: #fff;
+padding: 10px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+}
+
+.form-container button:hover {
+background-color: #555;
+}
+
+/* Landing Page Styles */
+.Landing {
+text-align: center;
+padding: 50px 20px;
+}
+
+.Landing h1 {
+font-size: 2.5em;
+margin-bottom: 20px;
+}
+
+.Landing p {
+font-size: 1.2em;
+color: #555;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+.Movies {
+  flex-direction: column;
+}
+
+.MovieCard {
+  width: 100%;
+}
+}
+
+@media (max-width: 480px) {
+.NavBar {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.NavBar .logo {
+  margin-bottom: 10px;
+}
 }

@@ -1,0 +1,46 @@
+/* Movie Details Page Styles */
+.movie-details-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.movie-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.movie-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.movie-rating {
+  font-size: 18px;
+  color: #ffcc00;
+}
+
+.reviews-section {
+  margin-top: 30px;
+}
+
+.review-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-text {
+  font-size: 14px;
+  color: #333;
+}
+
+.review-author {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
