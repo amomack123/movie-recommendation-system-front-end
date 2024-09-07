@@ -126,7 +126,7 @@ import { useState } from 'react';
 import * as authService from '../../services/authService';
 
 const SignupForm = ({ openSignin }) => {
-  const [formData, setFormData] = useState({ email: '', password: '', username: '' });
+  const [formData, setFormData] = useState({password: '', username: '' });
   const [error, setError] = useState('');
 
   const handleChange = (e) => {
@@ -137,7 +137,7 @@ const SignupForm = ({ openSignin }) => {
     e.preventDefault();
     try {
       await authService.signup(formData);
-      window.location.reload();
+      // window.location.reload();
     } catch (err) {
       console.log('Signup error:', err);  // Log the error to the console
       setError('Sign up failed. Please try again.');

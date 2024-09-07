@@ -35,8 +35,10 @@ const getMoviesByGenre = async (genre) => {
 
 // Admin only
 const addMovie = async (movieData) => {
+  console.log(movieData);
   try {
     const token = localStorage.getItem('token');
+    console.log(token);
     if (!token) throw new Error('Unauthorized');
     const res = await fetch(`${BACKEND_URL}/movies`, {
       method: 'POST',
@@ -67,6 +69,7 @@ const deleteMovie = async (movieId) => {
     if (!res.ok) {
       throw new Error('Failed to delete movie');
     }
+    return await res.json();
   } catch (err) {
     console.error('Error deleting movie:', err);
     throw err;

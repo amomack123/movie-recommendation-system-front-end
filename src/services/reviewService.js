@@ -11,17 +11,18 @@ const getReviewsByMovieId = async (movieId) => {
   }
 };
 
-const addReview = async (movieId, reviewData) => {
+const addReview = async (movieId, reviewData, rating) => {
   try {
+    let data = {movieId, rating, comment: reviewData}
     const token = localStorage.getItem('token');
     if (!token) throw new Error('Unauthorized');
-    const res = await fetch(`${BACKEND_URL}/movies/${movieId}/reviews`, {
+    const res = await fetch(`${BACKEND_URL}/reviews`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(reviewData),
+      body: JSON.stringify(data),
     });
     return await res.json();
   } catch (err) {

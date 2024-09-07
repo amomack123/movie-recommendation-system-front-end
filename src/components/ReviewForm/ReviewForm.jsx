@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import * as reviewService from '../../services/reviewService';
 
 const ReviewForm = ({ movieId }) => {
   const [reviewText, setReviewText] = useState('');
@@ -16,26 +17,27 @@ const ReviewForm = ({ movieId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (rating < 1 || rating > 5) {
-      setError('Rating must be between 1 and 5');
+    if (rating < 1 || rating > 10) {
+      setError('Rating must be between 1 and 10');
       return;
     }
     
     // Submit review data to server
     try {
-      const response = await fetch(`/api/movies/${movieId}/reviews`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ reviewText, rating }),
-      });
+      const response = await reviewService.addReview(movieId, reviewText, rating);
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ reviewText, rating }),
+      // });
       
-      if (response.ok) {
+      if (response._id) {
         // Handle successful submission
         setReviewText('');
         setRating(0);
         setError('');
+        
         // Optionally, refresh the reviews list or show a success message
       } else {
         // Handle error response

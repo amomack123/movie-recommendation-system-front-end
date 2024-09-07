@@ -72,10 +72,10 @@ const App = () => {
             <Route path="/" element={<Dashboard movies={movies} />} />
             <Route path="/movies" element={<Movies movies={movies} />} />
             <Route path="/movies/genre/:genre" element={<MovieList />} />
-            <Route path="/movies/:id" element={<MovieDetails />} />
+            <Route path="/movies/:id" element={<MovieDetails movies={movies} setMovies = {setMovies}/>} />
             <Route path="/preferences" element={<PreferenceForm />} />
             <Route path="/review/:id" element={<ReviewForm />} />
-            <Route path="/movies/add" element={<AddMovie />} />
+            <Route path="/movies/add" element={<AddMovie movies={movies} setMovies = {setMovies}/>} />
           </Routes>
         </>
       ) : (

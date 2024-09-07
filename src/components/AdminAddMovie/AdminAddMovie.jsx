@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // import movieService from '../services/movieService';
 import * as movieService from '../../services/movieService';
 
-const AddMovie = () => {
+const AddMovie = ({movies, setMovies}) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [genre, setGenre] = useState('');
@@ -15,7 +15,8 @@ const AddMovie = () => {
     const movieData = { title, description, genre, actors };
     
     try {
-      await movieService.addMovie(movieData);
+      const newMovie = await movieService.addMovie(movieData);
+      setMovies([...movies, newMovie])
       navigate('/movies'); // Redirect to movies page after success
     } catch (error) {
       console.error('Error adding movie:', error);
