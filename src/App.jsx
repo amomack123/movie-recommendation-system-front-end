@@ -82,6 +82,7 @@ const App = () => {
         <>
           {/* Authentication Routes */}
           <Routes>
+          <Route path = "/" element={<SignupForm openSignin={openSigninModal} />} />
             <Route path="/signin" element={<SigninForm openSignup={openSignupModal} />} />
             <Route path="/signup" element={<SignupForm openSignin={openSigninModal} />} />
           </Routes>
