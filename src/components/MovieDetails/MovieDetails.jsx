@@ -60,6 +60,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import * as movieService from '../../services/movieService';
+import * as reviewService from '../../services/reviewService';
 import ReviewForm from '../ReviewForm/ReviewForm';
 
 const MovieDetails = ({movies, setMovies}) => {
@@ -97,7 +98,7 @@ const MovieDetails = ({movies, setMovies}) => {
 
   const handleReviewDelete = async (reviewId) => {
     try {
-      await movieService.deleteReview(id, reviewId); // Ensure deleteReview is implemented in movieService
+      await reviewService.deleteReview(id, reviewId); // Ensure deleteReview is implemented in movieService
       setMovie((prev) => ({
         ...prev,
         reviews: prev.reviews.filter((review) => review._id !== reviewId),
